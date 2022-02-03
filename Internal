@@ -1,0 +1,67 @@
+game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(a)
+      if va[a:lower()] ~= nil then
+        va[a:lower()] = true
+      end
+    end)
+    game.Players.LocalPlayer:GetMouse().KeyUp:connect(function(a)
+      if va[a:lower()] ~= nil then
+        va[a:lower()] = false
+      end
+    end)
+    while game.RunService.Stepped:wait() do
+      if nil then
+      end
+      if game.Players.LocalPlayer.PlayerGui:FindFirstChild("MainScreenGui") and not nil and game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar:FindFirstChild("Speed") then
+        game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar.Speed.bar.Size = UDim2.new(20 / 100 * 0,95, 0, 0,83, 0)
+      else
+        game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar.HP:Clone().Name = "Speed"
+        game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar.HP:Clone().Position = UDim2.new(0,5, 0, 1, -120)
+        game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar.HP:Clone().bar.BackgroundColor3 = Color3.fromRGB(255, 155, 0)
+        game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar.HP:Clone().Picture.Image.Image = "rbxassetid://181035717"
+        game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar.HP:Clone().TextLabel.Text = "Speed"
+        game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar.HP:Clone().Parent = game.Players.LocalPlayer.PlayerGui.MainScreenGui.Bar.HP.Parent
+      end
+      if game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart ~= nil and game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart:IsDescendantOf(game.Workspace.Vehicles) then
+        if game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart ~= nil then
+          if nil then
+            nil.Vel:Destroy()
+            nil.Gyro:Destroy()
+          end
+          for fm = 1, 2 do
+            if {
+              [fm] = {
+                game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart.Parent,
+                game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart.Parent.Wheel
+              }
+            }[fm] then
+              {
+                [fm] = {
+                  game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart.Parent,
+                  game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart.Parent.Wheel
+                }
+              }[fm][2].Parent = {
+                [fm] = {
+                  game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart.Parent,
+                  game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart.Parent.Wheel
+                }
+              }[fm][1]
+            end
+            game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart.Parent.Wheel:remove()
+          end
+          Instance.new("BodyGyro", game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart).Name = "Gyro"
+          Instance.new("BodyVelocity", game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart).Name = "Vel"
+          Instance.new("BodyGyro", game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart).maxTorque = Vector3.new(9000000000, 9000000000, 9000000000)
+          Instance.new("BodyVelocity", game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart).MaxForce = Vector3.new(9000000000, 9000000000, 9000000000)
+        else
+          game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart.Gyro.cframe = workspace.CurrentCamera.CoordinateFrame
+          if not game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart then
+          end
+          if not game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart then
+          end
+          if not game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart then
+          end
+          game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart.Vel.Velocity = game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart.CFrame * (CFrame.new(0, 0, 0) * CFrame.new(0, 0, -20) * CFrame.new(0, 0, 20) * CFrame.new(-20, 0, 0) * CFrame.new(20, 0, 0)).p - game.Players.LocalPlayer.CharacterAdded:wait():WaitForChild("Humanoid").SeatPart.CFrame.p
+        end
+      end
+    end
+  end)
